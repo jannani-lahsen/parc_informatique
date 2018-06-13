@@ -7,9 +7,9 @@
         <field name="model">parc.user</field>
         <field name="arch" type="xml">
             <form string="User">
-                <label string="First Name" />
+                <label string="Prénom" />
                 <field name="firstname"/>
-                <label string="Last Name" />
+                <label string="Nom" />
                 <field name="lastname"/>
                 <notebook colspan="3">
                     <page string="Machines">
@@ -45,10 +45,10 @@
         <field name="model">parc.machine</field>
         <field name="arch" type="xml">
             <form string="Machine" >
-                <label string="Title" />
-                <field name="title"/>
-                <label string="Genre" />
-                <field name="genre"/>
+                <label string="Machine" />
+                <field name="Machine"/>
+                <label string="Périphériques" />
+                <field name="Peripherique"/>
                 <label string="User" />
                 <field name="user_id"/>
             </form>
@@ -60,8 +60,8 @@
         <field name="model">parc.machine</field>
         <field name="arch" type="xml">
             <tree string="Machine" >
-                <field name="title"/>
-                <field name="genre"/>
+                <field name="Machine"/>
+                <field name="Peripherique"/>
                 <field name="user_id"/>
             </tree>
         </field>
@@ -74,9 +74,9 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="parc" name="parc" />
-       <menuitem name="Parc" id="section_main_menu_parc" parent="parc" />
-        <menuitem name="Users" id="choix_user" parent="section_main_menu_parc" action="action_user"/>
+    <menuitem id="parc" name="Parc_informatique" />
+       <menuitem name="Parc" id="section_main_menu_parc" parent="Parc_informatique" />
+        <menuitem name="Utilisateurs" id="choix_user" parent="section_main_menu_parc" action="action_user"/>
        <menuitem name="Machines" id="choix_machine" parent="section_main_menu_parc" action="action_machine"/>
 
     </data>

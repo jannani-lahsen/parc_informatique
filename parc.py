@@ -12,6 +12,6 @@ class user(models.Model):
 
 class machine(models.Model):
     _name = 'parc.machine'
-    title = fields.Char('Title', required=True)
-    genre = fields.Char('Genre', required=True)
+    title = fields.Char('Machine', required=True)
+    genre = fields.Char('Peripherique', required=True)
     user_id = fields.Many2one('parc.user', 'User', ondelete='cascade')
