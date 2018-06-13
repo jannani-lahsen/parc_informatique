@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+
+<openerp>
+        <data>
+    <record model="ir.ui.view" id="user_form">
+        <field name="name">user.form</field>
+        <field name="model">parc.user</field>
+        <field name="arch" type="xml">
+            <form string="User">
+                <label string="First Name" />
+                <field name="firstname"/>
+                <label string="Last Name" />
+                <field name="lastname"/>
+                <notebook colspan="3">
+                    <page string="Machines">
+                      <field name="machine_ids"/>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="user_tree">
+        <field name="name">user.tree</field>
+        <field name="model">parc.user</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="User" >
+                <field name="firstname"/>
+                <field name="lastname"/>
+                <field name="machine_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_user">
+        <field name="name">User</field>
+        <field name="res_model">parc.user</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="machine_form">
+        <field name="name">machine.form</field>
+        <field name="model">parc.machine</field>
+        <field name="arch" type="xml">
+            <form string="Machine" >
+                <label string="Title" />
+                <field name="title"/>
+                <label string="Genre" />
+                <field name="genre"/>
+                <label string="User" />
+                <field name="user_id"/>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="machine_tree">
+        <field name="name">machine.tree</field>
+        <field name="model">parc.machine</field>
+        <field name="arch" type="xml">
+            <tree string="Machine" >
+                <field name="title"/>
+                <field name="genre"/>
+                <field name="user_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_machine">
+        <field name="name">Machine</field>
+        <field name="res_model">parc.machine</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="parc" name="parc" />
+       <menuitem name="Parc" id="section_main_menu_parc" parent="parc" />
+        <menuitem name="Users" id="choix_user" parent="section_main_menu_parc" action="action_user"/>
+       <menuitem name="Machines" id="choix_machine" parent="section_main_menu_parc" action="action_machine"/>
+
+    </data>
+</openerp>
