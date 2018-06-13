@@ -74,8 +74,8 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="parc" name="Parc_informatique" />
-       <menuitem name="Parc" id="section_main_menu_parc" parent="Parc_informatique" />
+    <menuitem id="parc" name="parc" />
+       <menuitem name="Parc" id="section_main_menu_parc" parent="parc" />
         <menuitem name="Utilisateurs" id="choix_user" parent="section_main_menu_parc" action="action_user"/>
        <menuitem name="Machines" id="choix_machine" parent="section_main_menu_parc" action="action_machine"/>
 
